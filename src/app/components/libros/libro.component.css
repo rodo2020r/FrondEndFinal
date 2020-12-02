@@ -1,0 +1,19 @@
+.izquierda {
+    width: 40%;
+    float: left;
+}
+
+.derecha {
+    width: 50%;
+    float: right;
+}
+
+label {
+    color: blue;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+th {
+    font-size: large;
+}

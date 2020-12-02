@@ -1,0 +1,52 @@
+<div class="izquierda">
+    <h1>REGISTRO DE LIBROS</h1>
+    <div class="row">
+        <form (ngSubmit)="crear( f )" #f="ngForm" class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input [(ngModel)]="libro.titulo" name="titulo" id="disabled" type="text" class="validate" placeholder="Ingrese el título del libro">
+                    <label for="disabled">Título</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input [(ngModel)]="libro.autor" name="autor" id="disabled" type="text" class="validate" placeholder="Ingrese el nombre del libro">
+                    <label for="disabled"> Autor</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input [(ngModel)]="libro.edicion" name="edicion" id="disabled" type="text" class="validate" placeholder="Ingrese la Edición">
+                    <label for="disabled">Edición</label>
+                </div>
+            </div>
+            <button class="waves-effect waves-light btn " type="submit">Registrar</button>
+        </form>
+    </div>
+</div>
+<table class="derecha">
+    <h2>INFORMACIÓN DE LOS LIBROS DISPONIBLES</h2>
+    <div>
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>autor </th>
+                <th>Edicion</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let libro of this.libros">
+                <td>{{libro.titulo}}</td>
+                <td>{{libro.autor}}</td>
+                <td>{{libro.edicion}}</td>
+
+                <td><button class="waves-effect waves-light btn red " (click)="elimnar(libro)">Eliminar</button>
+                </td>
+                <td>
+                    <button class="waves-effect waves-light btn " (click)="editar(libro)">Editar</button></td>
+            </tr>
+
+        </tbody>
+    </div>
+</table>
